@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: config-k8s-server
+  name: config-k3s-server
 spec:
   destination:
     name: in-cluster
@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     path: targets/nl1-rocklor
-    repoURL: https://github.com/ben-obrien/ap-k8s-server-config-ext
+    repoURL: https://github.com/ben-obrien/ap-k3s-server-config-ext
     targetRevision: main
   syncPolicy:
     automated:
