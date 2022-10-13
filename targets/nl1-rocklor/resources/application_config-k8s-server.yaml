@@ -2,17 +2,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: config-vsphere
+  name: k8s-server-config
   namespace: akuity
 spec:
   destination:
     name: rocklor
-    namespace: swift-config-vsphere
+    namespace: argocd
   project: default
   source:
     path: targets/nl1-rocklor
-    repoURL: https://github.com/ben-obrien/ap-vsphere-config-ext
+    repoURL: https://github.com/ben-obrien/ap-k8s-server-config-ext
     targetRevision: main
   syncPolicy:
     automated:
+      prune: true
       selfHeal: true

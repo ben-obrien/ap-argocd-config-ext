@@ -1,0 +1,19 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: config-ocp
+  namespace: akuity
+spec:
+  destination:
+    name: rocklor
+    namespace: swift-config-ocp
+  project: default
+  source:
+    path: targets/nl1-rocklor
+    repoURL: https://github.com/ben-obrien/ocp-config-ext
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

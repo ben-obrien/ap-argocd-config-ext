@@ -6,13 +6,14 @@ metadata:
   namespace: akuity
 spec:
   destination:
-    name: rocklor
-    namespace: argocd
+    name: in-cluster
+    namespace: akuity
   project: default
   source:
     path: targets/nl1-rocklor
-    repoURL: https://github.com/ben-obrien/ap-k8s-server-config-ext
+    repoURL: https://github.com/ben-obrien/ap-argocd-config-ext
     targetRevision: main
   syncPolicy:
     automated:
+      prune: true
       selfHeal: true
