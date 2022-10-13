@@ -1,0 +1,18 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: config-vsphere
+  namespace: akuity
+spec:
+  destination:
+    name: rocklor
+    namespace: swift-config-vsphere
+  project: default
+  source:
+    path: targets/nl1-rocklor
+    repoURL: https://github.com/ben-obrien/ap-vsphere-config-ext
+    targetRevision: main
+  syncPolicy:
+    automated:
+      selfHeal: true
