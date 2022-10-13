@@ -3,11 +3,10 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: config-ocp
-  namespace: akuity
 spec:
   destination:
-    name: rocklor
-    namespace: akuity
+    name: in-cluster
+    namespace: argocd
   project: default
   source:
     path: targets/nl1-rocklor
