@@ -5,8 +5,8 @@ metadata:
   name: config-k8s-server
 spec:
   destination:
-    name: rocklor
-    namespace: akuity
+    name: in-cluster
+    namespace: argocd
   project: default
   source:
     path: targets/nl1-rocklor
