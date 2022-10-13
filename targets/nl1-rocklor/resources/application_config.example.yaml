@@ -2,12 +2,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: k8s-server-config
-  namespace: akuity
+  name: akuity-config
+  namespace: argocd
 spec:
   destination:
     name: in-cluster
-    namespace: akuity
+    namespace: argocd
   project: default
   source:
     path: targets/nl1-rocklor

@@ -7,7 +7,7 @@ metadata:
 spec:
   destination:
     name: rocklor
-    namespace: swift-config-ocp
+    namespace: akuity
   project: default
   source:
     path: targets/nl1-rocklor
