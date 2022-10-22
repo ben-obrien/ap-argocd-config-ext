@@ -2,15 +2,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: config-vsphere
+  name: config
+  namespace: argocd
 spec:
   destination:
     name: in-cluster
     namespace: argocd
   project: default
   source:
-    path: targets/nl1-rocklor
-    repoURL: https://github.com/ben-obrien/ap-vsphere-config-ext
+    path: targets/nl1-decklor
+    repoURL: https://github.com/ben-obrien/ap-argocd-config-ext
     targetRevision: main
   syncPolicy:
     automated:
